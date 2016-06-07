@@ -50,4 +50,17 @@ if defined?(ChefSpec)
   def delete_grafana_user(name)
     ChefSpec::Matchers::ResourceMatcher.new(:grafana_user, :delete, name)
   end
+
+  # Plugin matchers
+  def install_plugin(name)
+    ChefSpec::Matchers::ResourceMatcher.new(:manage_plugin, name, :install)
+  end
+
+  def update_plugin(name)
+    ChefSpec::Matchers::ResourceMatcher.new(:manage_plugin, name, :update)
+  end
+
+  def remove_plugin(name)
+    ChefSpec::Matchers::ResourceMatcher.new(:manage_plugin, name, :remove)
+  end
 end
