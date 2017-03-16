@@ -1,4 +1,9 @@
 default['grafana']['ldap_verbose_logging'] = false
+default['grafana']['ldap_multi_tree_auth'] = false
+# When the ldap_multi_tree_auth attribute is set to true, it is possible to configure
+# several ldap servers by using default['grafana']['ldap'][0],
+# default['grafana']['ldap'][1]['[servers]']['host'], etc. instead of
+# default['grafana']['ldap']['[servers]'] with the same syntax.
 
 default['grafana']['ldap']['[servers]']['host'] = {
   comment: 'Ldap server host',
