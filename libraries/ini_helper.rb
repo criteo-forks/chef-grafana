@@ -2,10 +2,8 @@ module GrafanaCookbook
   module IniHelper
     def self.format_multi_config(multi_config)
       output = []
-      i=0
-      while multi_config[i] != nil
-        output << format_config(multi_config[i])
-        i += 1
+      multi_config.keys do |conf|
+        output << format_config(multi_config[conf])
       end
       output.join "\n"
     end
