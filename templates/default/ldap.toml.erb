@@ -11,5 +11,5 @@ verbose_logging = <%= @verbose_logging %>
 <% if @multi_config != true %>
 <%= GrafanaCookbook::IniHelper.format_config @config %>
 <% else %>
-<%= GrafanaCookbook::IniHelper.format_multi_config @config %>
+<%= GrafanaCookbook::IniHelper.format_multi_config @config['multiconfig'] %>
 <% end %>
