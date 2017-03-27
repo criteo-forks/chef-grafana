@@ -42,6 +42,7 @@ end
 default['grafana']['user'] = 'grafana'
 default['grafana']['group'] = 'grafana'
 default['grafana']['home'] = '/usr/share/grafana'
+default['grafana']['bin_dir'] = ::File.join(node['grafana']['home'], 'bin')
 default['grafana']['data_dir'] = '/var/lib/grafana'
 default['grafana']['log_dir'] = '/var/log/grafana'
 default['grafana']['plugins_dir'] = '/var/lib/grafana/plugins'
