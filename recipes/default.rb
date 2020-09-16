@@ -79,8 +79,8 @@ g_ini_template = template "#{node['grafana']['conf_dir']}/grafana.ini" do
   source 'grafana.ini.erb'
   variables ini: ini
   owner 'root'
-  group 'root'
-  mode '0644'
+  group node['grafana']['group']
+  mode '0640'
   sensitive true
 end
 
