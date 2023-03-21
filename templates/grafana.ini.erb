@@ -388,6 +388,14 @@ plugin_catalog_hidden_plugins = <%= @grafana['plugins']['plugin_catalog_hidden_p
 <% end %>
 <% end %>
 
+#################################### Features ##################
+<% if @grafana['feature_toggles'] %>
+[feature_toggles]
+<% if @grafana['feature_toggles']['enable'] %>
+enable = <%= @grafana['feature_toggles']['enable'] %>
+<% end %>
+<% end %>
+
 #################################### Dashboards ##################
 <% if @grafana['dashboards'] %>
 [dashboards]
